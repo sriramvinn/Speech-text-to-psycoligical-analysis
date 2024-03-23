@@ -88,7 +88,7 @@ The application is deployed on an AWS EC2 instance using a self-hosted runner fo
 - The application will process the audio file, perform sentiment analysis, and display the results.
 
 ## Drawbacks
-- **Deepgram API Performance**: Initial tests with the Deepgram API revealed high processing times. Even after deployment, the server response time is approximately 3 minutes
+- EC2 Server Performance: My choice of the EC2 t2.micro instance, while cost-effective as a part of the free tier, has resulted in slower performance due to limited vCPUs. The server response time, including calls to both APIs, averages around 3 minutes.
 
 ## Challenges Faced
 
