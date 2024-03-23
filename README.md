@@ -2,7 +2,7 @@
 
 ## Overview
 
-This Flask web application performs sentiment analysis on audio and text. It utilizes OpenAI's API for its core features. Due to the high computational resource requirements of the WhisperX model, I opted not to deploy it in the cloud. Instead, I use Deepgram API for cloud-based audio processing and reserve WhisperX for local development, employing different audio processing modules for each environment.
+This Flask web application performs sentiment analysis on audio and text. It utilizes OpenAI's API for its core features. **Due to the high computational** resource requirements of the WhisperX model, **I opted not to deploy it in the cloud. Instead, I use Deepgram API for cloud-based audio processing and reserve WhisperX for local development**, employing different audio processing modules for each environment.
 
 ## Local Setup
 
@@ -86,6 +86,9 @@ The application is deployed on an AWS EC2 instance using a self-hosted runner fo
 - Access the web interface via `http://localhost:8080` locally or your EC2 instance's public IP address `http://3.8.208.233:8080`.
 - Upload an audio file through the web interface.
 - The application will process the audio file, perform sentiment analysis, and display the results.
+
+## Drawbacks
+- **Deepgram API Performance**: Initial tests with the Deepgram API revealed high processing times. Even after deployment, the server response time is approximately 3 minutes
 
 ## Challenges Faced
 
