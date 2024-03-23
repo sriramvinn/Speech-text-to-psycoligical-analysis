@@ -1,6 +1,6 @@
 from flask import Flask, request, render_template, redirect
 from werkzeug.utils import secure_filename
-from src.models.audio_processor import process_audio
+from src.models.audio_processor import process
 from src.models.text_analyzer import analyze_text
 import os
 
