@@ -47,9 +47,9 @@ This Flask web application performs sentiment analysis on audio and text. It uti
 
     ```
     export ENVIRONMENT=local
-    export OPENAI_API_KEY='YOUR_API_KEY_HERE'
-    export DEEPGRAM_API_KEY='YOUR_API_KEY_HERE'
-    export HUGGINGFACE_KEY='YOUR_API_KEY_HERE'
+    export OPENAI_API_KEY='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'
+    export DEEPGRAM_API_KEY='5731ebc254208d30dd603df9de1f1fea90d01040'
+    export HUGGINGFACE_KEY='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'
     ```
 
 6. **Run the Application**
