@@ -91,7 +91,7 @@ The application is deployed on an AWS EC2 instance using a self-hosted runner fo
 
 - **Audio to Text**: For local setups, I use Whisper for transcription and Pyannote for speaker identification. Matching the given text example required careful audio processing.
 - **CI/CD Pipeline**: Setting up a CI/CD pipeline with GitHub Actions required careful management of AWS credentials and Docker image handling.
-- **Cloud requrements**: Both Whisper and Pyannote can run on CPU or GPU. However, the Whisper model (small.en) and Pyannote individually take about 7 minutes and requires over 3 GB of RAM. Ensuring cost-efficiency for real-time use has been a challenge, which is why it's not deployed in a high-capacity mode.
+- **Cloud requrements**: Both Whisper and Pyannote can run on CPU or GPU. However, the Whisper model (small.en) and Pyannote individually take about 7 minutes and requires over 3 GB of RAM. Ensuring cost-efficiency for real-time use has been a challenge, which is why it's not deployed in EC2.
 
 ## Future Enhancements
 
