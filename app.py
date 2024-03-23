@@ -1,6 +1,6 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, redirect
 from werkzeug.utils import secure_filename
-from src.models.audio_processor import process_audio
+from src.models.audio_processor import process
 from src.models.text_analyzer import analyze_text
 import os
 
@@ -29,7 +29,7 @@ def upload_file():
         if file.filename == '':
             message = 'No selected file.'
             return render_template('index.html', message=message)
-        if file and allowed_file(file.filename):
+        else:
             filename = secure_filename(file.filename)
             file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
             file.save(file_path)
@@ -38,9 +38,8 @@ def upload_file():
                     text = f.read()
                 insights = analyze_text(text)
             else:
-                text = process_audio(file_path)
+                text = process(file_path)
                 insights = analyze_text(text)
-                
                 
             return render_template('index.html', insights=insights)
 
