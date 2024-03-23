@@ -1,6 +1,6 @@
-from flask import Flask, request, render_template, redirect, url_for
+from flask import Flask, request, render_template, redirect
 from werkzeug.utils import secure_filename
-from src.models.audio_processor import process_audio
+from src.models.audio_processor import process
 from src.models.text_analyzer import analyze_text
 import os
 
@@ -23,11 +23,13 @@ def upload_file():
     if request.method == 'POST':
         # Check if the post request has the file part
         if 'file' not in request.files:
-            return redirect(request.url)
+            message = 'No file part in the request.'
+            return render_template('index.html', message=message)
         file = request.files['file']
         if file.filename == '':
-            return redirect(request.url)
-        if file and allowed_file(file.filename):
+            message = 'No selected file.'
+            return render_template('index.html', message=message)
+        else:
             filename = secure_filename(file.filename)
             file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
             file.save(file_path)
@@ -36,7 +38,7 @@ def upload_file():
                     text = f.read()
                 insights = analyze_text(text)
             else:
-                text = process_audio(file_path)
+                text = process(file_path)
                 insights = analyze_text(text)
                 
             return render_template('index.html', insights=insights)
