@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+    <title>Upload and Analyze</title>
+</head>
+<body>
+    <h1>Upload a File for Analysis</h1>
+    <form action="" method="post" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <input type="submit" value="Upload">
+    </form>
+
+    {% if insights %}
+    <div>
+        <h2>Analysis Insights</h2>
+        <p>{{ insights }}</p>
+    </div>
+    {% endif %}
+</body>
+</html>
+

@@ -1,0 +1,10 @@
+uploads/
+alindor/
+.DS_Store
+__pycache__/
+*.py[cod]
+*$py.class
+logs
+
+# C extensions
+*.so
