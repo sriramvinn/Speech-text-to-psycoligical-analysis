@@ -87,6 +87,17 @@ The application is deployed on an AWS EC2 instance using a self-hosted runner fo
 - Upload an audio file through the web interface.
 - The application will process the audio file, perform sentiment analysis, and display the results.
 
+## Results/Output
+
+This section showcases the output of the sentiment analysis performed by the web application. Below is an example of the sentiment analysis result displayed in the web interface after processing an audio file:
+
+![Sentiment Analysis Result](/result/out.png "Sentiment Analysis Output")
+
+The image illustrates how the application processes the audio file, performs sentiment analysis, and visually represents the results, providing valuable insights into the emotional tone of the input audio.
+
+## Drawbacks
+- EC2 Server Performance: My choice of the EC2 t2.micro instance, while cost-effective as a part of the free tier, has resulted in slower performance due to limited vCPUs. The server response time, including calls to both APIs, averages around 3 minutes.
+
 ## Challenges Faced
 
 - **Audio to Text**: For local setups, I use Whisper for transcription and Pyannote for speaker identification. Matching the given text example required careful audio processing.
