@@ -18,7 +18,7 @@ This Flask web application performs sentiment analysis on audio and text. It uti
 1. **Clone the Repository**
 
     ```
-    [git clone https://github.com/sriramvinn/Alindor.git](https://github.com/sriramvinn/Speech-text-to-psycoligical-analysis.git)
+    https://github.com/sriramvinn/Speech-text-to-psycoligical-analysis.git
     ```
 
 2. **Navigate to the Project Directory**
